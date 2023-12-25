@@ -9,7 +9,7 @@
 
       <div class="py-14" />
 
-      <v-row class="d-flex align-center justify-center">
+      <v-row class="d-flex align-center justify-center mb-n1">
         <v-col cols="auto">
           <v-btn
             href="https://vuetifyjs.com/components/all/"
@@ -18,13 +18,9 @@
             target="_blank"
             variant="text"
           >
-            <v-icon
-              icon="mdi-view-dashboard"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-view-dashboard" size="large" start />
 
-            Components
+            {{ $t('module.components') }}
           </v-btn>
         </v-col>
 
@@ -38,13 +34,9 @@
             target="_blank"
             variant="flat"
           >
-            <v-icon
-              icon="mdi-speedometer"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-speedometer" size="large" start />
 
-            Get Started
+            {{ $t('module.get_started') }}
           </v-btn>
         </v-col>
 
@@ -55,21 +47,27 @@
             rel="noopener noreferrer"
             target="_blank"
             variant="text"
+            color="primary"
           >
-            <v-icon
-              icon="mdi-account-group"
-              size="large"
-              start
-            />
+            <v-icon icon="mdi-account-group" size="large" start />
 
             Community
           </v-btn>
         </v-col>
       </v-row>
+
+      <v-btn min-width="164" rel="noopener noreferrer" variant="text" @click="increment">
+        <v-icon icon="mdi-account-group" size="large" start />
+
+        Count: {{ count }}
+      </v-btn>
     </v-responsive>
   </v-container>
 </template>
 
 <script lang="ts" setup>
-  //
+import { storeCounter } from '@/stores/counter'
+
+const { count } = storeToRefs(storeCounter())
+const { increment } = storeCounter()
 </script>

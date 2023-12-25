@@ -1,0 +1,14 @@
+{
+  "threshold": 0,
+  "reporters": ["html", "console"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/.husky/**",
+    "**/.vscode/**",
+    "**/coverage/**",
+    "**/dist/**",
+    "**.svg"
+  ],
+  "gitignore": true
+}
